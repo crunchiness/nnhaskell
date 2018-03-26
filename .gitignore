@@ -27,4 +27,4 @@ cabal.project.local~
 *.iml
 *.txt
 Setup
-Vargas
+Text2Matrix

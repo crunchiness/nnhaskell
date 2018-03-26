@@ -14,4 +14,6 @@ main :: IO ()
 main = do
    f <- getArgs
    s <- readFile $ head f
-   putStrLn $ prettyMatrix $ (parseMatrix s :: Matrix Int)
+   let matrix = parseMatrix s :: Matrix Int
+   putStrLn $ show $ nrows $ matrix
+   putStrLn $ show $ ncols $ matrix
