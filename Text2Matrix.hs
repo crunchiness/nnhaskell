@@ -35,10 +35,10 @@ mostElemFrom cmp m i j cmost | i == 0      = cmost
 
 main :: IO ()
 main = do
-   f <- getArgs
-   s <- readFile $ head f
-   let m = parseMatrix s :: Matrix Int
-   putStrLn $ "Rows: " ++ (show $ nrows $ m)
-   putStrLn $ "Cols: " ++ (show $ ncols $ m)
-   putStrLn $ "Min: " ++ (show $ minElem $ m)
-   putStrLn $ "Max: " ++ (show $ maxElem $ m)
+    f <- getArgs
+    s <- readFile $ head f
+    let m = parseMatrix s :: Matrix Int
+    putStrLn $ "Rows: " ++ (show $ nrows m)
+    putStrLn $ "Cols: " ++ (show $ ncols m)
+    putStrLn $ "Min: " ++ (show $ minElem m)
+    putStrLn $ "Max: " ++ (show $ maxElem m)
