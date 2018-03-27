@@ -26,5 +26,4 @@ cabal.project.local~
 .idea/
 *.iml
 *.txt
-Setup
-Text2Matrix
+Main
