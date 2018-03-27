@@ -1,4 +1,4 @@
-module Text2Matrix where
+module Text2Matrix (parseMatrix) where
 
 import Data.List.Split
 import Data.Matrix

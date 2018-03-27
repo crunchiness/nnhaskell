@@ -1,4 +1,4 @@
-module MatrixManipulation where
+module MatrixManipulation (maxElem, minElem) where
 
 import Data.Matrix
 
