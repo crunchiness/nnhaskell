@@ -27,3 +27,4 @@ cabal.project.local~
 *.iml
 *.txt
 Main
+*.mat
