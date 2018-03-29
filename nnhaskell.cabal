@@ -6,7 +6,7 @@ synopsis:
 -- license-file:
 homepage:
 author:               Ingvaras Merkys
-maintainer:           ingvaras.merkys@westernunion.com
+maintainer:           merkys@ingvaras.com
 category:
 -- copyright:
 build-type:           Simple
@@ -18,5 +18,10 @@ executable nnhaskell
   -- other-modules:
   -- other-extensions:
   build-depends:        base >= 4.7 && < 5
+  -- gtk
   hs-source-dirs:       src
   default-language:     Haskell2010
+
+-- brew cask install xquartz
+-- brew install gtk
+-- cabal install gtk -f have-quartz-gtk

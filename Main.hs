@@ -5,12 +5,13 @@ import Data.Matrix
 
 import MatrixManipulation
 import Text2Matrix
+import Matrix2Image
 
 main :: IO ()
 main = do
     [filename] <- getArgs
     s <- readFile filename
-    let m = parseMatrix s :: Matrix Float
+    let m = parseMatrix s :: Matrix Double
     putStrLn $ "Rows: " ++ (show $ nrows m)
     putStrLn $ "Cols: " ++ (show $ ncols m)
     putStrLn $ "Min: " ++ (show $ minElem m)
@@ -18,3 +19,4 @@ main = do
     case squareMatrixVector (getRow 1 m) 32 of
         Nothing  -> putStrLn "Nothing"
         Just mat -> putStrLn $ prettyMatrix mat
+    drawSmth
