@@ -1,0 +1,9 @@
+flags: {}
+extra-package-dbs: []
+packages:
+- .
+extra-deps:
+- gio-0.13.4.1
+- gtk-0.14.7
+- matrix-0.3.6.1
+resolver: lts-11.2

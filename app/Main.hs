@@ -3,9 +3,7 @@ module Main where
 import System.Environment
 import Data.Matrix
 
-import MatrixManipulation
-import Text2Matrix
-import Matrix2Image
+import Lib
 
 main :: IO ()
 main = do

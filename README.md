@@ -1,12 +1,20 @@
 # nnhaskell
 
 Set up
+
+On Linux
 ```
-$ cabal sandbox init
-$ cabal install -j
+$ stack setup
+$ stack build
+```
+
+On Mac
+```
+$ stack setup
+$ stack build --flag gtk:have-quartz-gtk
 ```
 
 Run
 ```
-$ .cabal-sandbox/bin/nnhaskell <params>
+$ stack exec nnhaskell-exe <params>
 ```

@@ -10,6 +10,14 @@ import Graphics.UI.Gtk.Abstract.Widget (widgetGetDrawWindow)
 lol :: IO Pixbuf
 lol = pixbufNew ColorspaceRgb False 8 32 32
 
+-- setRGBA pb x y (r, g, b, a) = do
+--     ps <- pixbufGetPixels pb :: IO (PixbufData Int Word8)
+--     row <- pixbufGetRowstride pb
+--     writeArray ps (y*row + 4*x + 0) r
+--     writeArray ps (y*row + 4*x + 1) g
+--     writeArray ps (y*row + 4*x + 2) b
+--     writeArray ps (y*row + 4*x + 3) a
+
 drawSmth :: IO ()
 drawSmth = do
                w <- windowNew

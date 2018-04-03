@@ -1,0 +1,53 @@
+name:                nnhaskell
+version:             0.1.0.0
+github:              "crunchiness/nnhaskell"
+license:             GPL-3
+author:              "Ingvaras Merkys"
+maintainer:          "nnhaskell@ingvaras.com"
+copyright:           "2018 Ingvaras Merkys"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on Github at <https://github.com/crunchiness/nnhaskell#readme>
+
+dependencies:
+- base   >= 4.7    && < 5
+- matrix >= 0.3.6  && < 0.4
+- vector >= 0.12.0 && < 0.13
+- split  >= 0.2.3  && < 0.3
+- gtk    >= 0.14.7 && < 0.15
+
+library:
+  source-dirs: src
+
+executables:
+  nnhaskell-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - nnhaskell
+
+tests:
+  nnhaskell-test:
+    main:                Spec.hs
+    source-dirs:         test
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    - -Wall
+    dependencies:
+    - nnhaskell
