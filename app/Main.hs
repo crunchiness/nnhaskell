@@ -16,5 +16,6 @@ main = do
     putStrLn $ "Max: " ++ (show $ maxElem m)
     case squareMatrixVector (getRow 1 m) 32 of
         Nothing  -> putStrLn "Nothing"
-        Just mat -> putStrLn $ prettyMatrix mat
-    drawSmth
+        Just mat -> do
+                        putStrLn $ prettyMatrix mat
+                        drawSmth mat

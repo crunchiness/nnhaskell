@@ -8,7 +8,6 @@ copyright:           "2018 Ingvaras Merkys"
 
 extra-source-files:
 - README.md
-- ChangeLog.md
 
 # Metadata used when publishing your package
 # synopsis:            Short description of your package
@@ -20,11 +19,12 @@ extra-source-files:
 description:         Please see the README on Github at <https://github.com/crunchiness/nnhaskell#readme>
 
 dependencies:
+- array  == 0.5.2.0
 - base   >= 4.7    && < 5
-- matrix >= 0.3.6  && < 0.4
-- vector >= 0.12.0 && < 0.13
-- split  >= 0.2.3  && < 0.3
 - gtk    >= 0.14.7 && < 0.15
+- matrix >= 0.3.6  && < 0.4
+- split  >= 0.2.3  && < 0.3
+- vector >= 0.12.0 && < 0.13
 
 library:
   source-dirs: src
