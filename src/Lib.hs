@@ -1,10 +1,10 @@
 module Lib
-    ( squareMatrixVector
-    , parseMatrix
-    , minElem
+    ( displayMatrix
     , maxElem
-    , mapMatrix
-    , displayMatrix
+    , minElem
+    , parseMatrix
+    , squareMatrixVector
+    , toWord8Range
     ) where
 
 import Matrix2Image

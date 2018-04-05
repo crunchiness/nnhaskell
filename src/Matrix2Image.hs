@@ -23,16 +23,15 @@ setRGB pb x y (r, g, b) = do
     writeArray ps (y * row + 3 * x + 1) g
     writeArray ps (y * row + 3 * x + 2) b
 
-setPixels :: RealFrac a => Pixbuf -> Matrix a -> IO [()]
+setPixels :: Pixbuf -> Matrix Word8 -> IO [()]
 setPixels pb m = do
                      sequence [ f (x - 1) (y - 1) $ m ! (x, y) | y <- [1 .. (nrows m)], x <- [1 .. (ncols m)] ]
                      where
                          f x y val = do
-                             let v = (round val :: Word8)
-                             setRGB pb x y (v, v, v)
+                             setRGB pb x y (val, val, val)
 
 
-displayMatrix :: RealFrac a => Matrix a -> IO ()
+displayMatrix :: Matrix Word8 -> IO ()
 displayMatrix m = do
     initGUI
     let w = ncols m; h = nrows m

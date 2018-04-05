@@ -18,4 +18,4 @@ main = do
         Nothing  -> putStrLn "Nothing"
         Just mat -> do
                         putStrLn $ prettyMatrix mat
-                        displayMatrix $ mapMatrix (\x -> x + 128) mat
+                        displayMatrix $ toWord8Range mat
