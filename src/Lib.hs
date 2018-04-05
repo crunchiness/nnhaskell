@@ -3,7 +3,8 @@ module Lib
     , parseMatrix
     , minElem
     , maxElem
-    , drawSmth
+    , mapMatrix
+    , displayMatrix
     ) where
 
 import Matrix2Image

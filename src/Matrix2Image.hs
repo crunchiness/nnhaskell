@@ -28,11 +28,12 @@ setPixels pb m = do
                      sequence [ f (x - 1) (y - 1) $ m ! (x, y) | y <- [1 .. (nrows m)], x <- [1 .. (ncols m)] ]
                      where
                          f x y val = do
-                             let r = (round val :: Word8)
-                             setRGB pb x y (r, r, r)
+                             let v = (round val :: Word8)
+                             setRGB pb x y (v, v, v)
 
-drawSmth :: RealFrac a => Matrix a -> IO ()
-drawSmth m = do
+
+displayMatrix :: RealFrac a => Matrix a -> IO ()
+displayMatrix m = do
     initGUI
     let w = ncols m; h = nrows m
     window <- windowNew
@@ -43,12 +44,9 @@ drawSmth m = do
     gc <- gcNew dw
     pb <- createPixbuf (ncols m) (nrows m)
     setPixels pb m
-
     let draw = do { drawPixbuf dw gc pb srcX srcY destX destY srcWidth srcHeight dither xDither yDither
                   ; return True }
-
     timeoutAdd draw 500
-
     widgetShowAll window
     mainGUI
     where

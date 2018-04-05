@@ -18,4 +18,4 @@ main = do
         Nothing  -> putStrLn "Nothing"
         Just mat -> do
                         putStrLn $ prettyMatrix mat
-                        drawSmth mat
+                        displayMatrix $ mapMatrix (\x -> x + 128) mat
