@@ -1,9 +1,11 @@
 module Lib
-    ( displayMatrix
+    ( avgRows
+    , displayMatrix
     , maxElem
     , minElem
     , parseMatrix
     , squareMatrixVector
+    , sumRows
     , toWord8Range
     ) where
 

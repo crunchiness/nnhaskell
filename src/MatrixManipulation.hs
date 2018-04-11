@@ -1,4 +1,4 @@
-module MatrixManipulation (maxElem, minElem, squareMatrixVector, toWord8Range) where
+module MatrixManipulation (avgRows, maxElem, minElem, squareMatrixVector, sumRows, toWord8Range) where
 
 import Data.Matrix
 import Data.Word
@@ -35,6 +35,24 @@ squareMatrixVector vec n | n == 0              = Nothing
                              m = squareMatrixVector' (V.drop n vec) n (rowVector $ V.take n vec)
                              squareMatrixVector' vec n m | (length vec) == 0 = m
                                                          | otherwise = squareMatrixVector' (V.drop n vec) n (m <-> rowVector (V.take n vec))
+
+sumRows :: Num a => Matrix a -> Matrix a
+sumRows m = rowVector $ foldr addVecs zeroVec [getRow i m | i <- [1..rows]]
+          where
+              rows = nrows m
+              cols = ncols m
+              zeroVec = V.generate cols (\_ -> 0)
+
+avgRows :: Fractional a => Matrix a -> Matrix a
+avgRows m = mapPos (\_ x -> x / rows) $ sumRows m
+          where
+              rows = fromIntegral $ nrows m
+
+addVecs :: Num a => V.Vector a -> V.Vector a -> V.Vector a
+addVecs vec1 vec2 = f vec1 vec2 V.empty
+                  where
+                      f v1 v2 v3 | (V.null v1) && (V.null v2) = v3
+                                 | otherwise = f (V.tail v1) (V.tail v2) $ V.snoc v3 ((V.head v1) + (V.head v2))
 
 toWord8Range :: RealFrac a => Matrix a -> Matrix Word8
 toWord8Range m = mapPos (\_ x -> min (round x :: Word8) 255) m'

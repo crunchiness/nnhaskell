@@ -14,7 +14,7 @@ main = do
     putStrLn $ "Cols: " ++ (show $ ncols m)
     putStrLn $ "Min: " ++ (show $ minElem m)
     putStrLn $ "Max: " ++ (show $ maxElem m)
-    case squareMatrixVector (getRow 1 m) 32 of
+    case squareMatrixVector (getRow 1 (avgRows m)) 32 of
         Nothing  -> putStrLn "Nothing"
         Just mat -> do
                         putStrLn $ prettyMatrix mat
